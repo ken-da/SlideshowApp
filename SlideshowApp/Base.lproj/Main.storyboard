@@ -25,16 +25,16 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="進む"/>
                                 <connections>
-                                    <action selector="nextButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZVS-nC-0ew"/>
+                                    <action selector="nextImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sEm-FK-r7P"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qbB-8Z-7TA">
-                                <rect key="frame" x="151" y="544" width="83" height="31"/>
+                                <rect key="frame" x="150" y="544" width="83" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="戻る"/>
                                 <connections>
-                                    <action selector="prevButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WJl-fD-Oyu"/>
+                                    <action selector="prevImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rv7-SO-LjS"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xxw-aX-wu0">
@@ -43,7 +43,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="再生/停止"/>
                                 <connections>
-                                    <action selector="pauseButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="040-Ae-hRc"/>
+                                    <action selector="autoImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4jH-Hv-bQd"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -59,6 +59,8 @@
                     <connections>
                         <outlet property="autoButton" destination="xxw-aX-wu0" id="L4G-lk-5ax"/>
                         <outlet property="imageView" destination="uvi-k3-1sG" id="86N-EB-Fik"/>
+                        <outlet property="nextButton" destination="ZNY-dX-qur" id="LXk-9l-WCU"/>
+                        <outlet property="prevButton" destination="qbB-8Z-7TA" id="5ia-aD-gRI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -13,10 +13,17 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var imageView: UIImageView!
 
+    @IBOutlet weak var nextButton: UIButton!
+
+    @IBOutlet weak var prevButton: UIButton!
+    
     @IBOutlet weak var autoButton: UIButton!
     
     //再生停止ボタンの状態を示すフラグ
     var autoFlag : Bool = false
+    
+    //自動再生時のタイマー
+    var timer: Timer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +57,7 @@ class ViewController: UIViewController {
     }
         
         
-    @IBAction func nextButton(_ sender: Any) {
+    @IBAction func nextImage(_ sender: Any) {
         //表示している画像番号を１つ増やす
         
         //画像番号が最後(3)の場合、最初の画像(1)を表示する
@@ -64,7 +71,7 @@ class ViewController: UIViewController {
         displayImage()
     }
     
-    @IBAction func prevButton(_ sender: Any) {
+    @IBAction func prevImage(_ sender: Any) {
         
         //画像番号が最初(1)の場合、最初の画像(3)を表示する
         if dispImageNo == 0 {
@@ -77,6 +84,55 @@ class ViewController: UIViewController {
         displayImage()
         
     }
+    
+    
+    @IBAction func autoImage(_ sender: Any) {
+        if autoFlag == false {
+            //ボタン表記、停止へ変更
+            autoButton.setTitle("停止", for: .normal)
+            
+            //進むボタン、戻るボタン 無効化
+            nextButton.isEnabled = false
+            prevButton.isEnabled = false
+        
+            //nilの場合のみ、再生ボタンをタップすると自動再生、2秒毎にスライド
+            if self.timer == nil {
+                self.timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(onTimer(_:)), userInfo: nil , repeats: true)
+            }
+            autoFlag = true
+        } else {
+            //ボタン表記、再生へ変更
+            autoButton.setTitle("再生", for: .normal)
+            
+            //進むボタン、戻るボタン 有効化
+            nextButton.isEnabled = true
+            prevButton.isEnabled = true
+            
+            //自動再生を停止,自動再生再開時のためnilを代入
+            if self.timer != nil {
+                self.timer.invalidate()
+                self.timer = nil
+            }
+            
+            autoFlag = false
+        }
+        
+    }
+    
+    @objc func onTimer(_ timer: Timer) {
+
+        //画像番号が最後(3)の場合、最初の画像(1)を表示する
+        if dispImageNo == 2 {
+            dispImageNo = 0
+        } else {
+            //表示している画像番号を１つ増やす
+            dispImageNo += 1
+        }
+        
+        //画像を表示
+        displayImage()
+    }
+
     
 
 }
