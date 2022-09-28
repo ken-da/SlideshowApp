@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3156B9F128E18BD3006B8F57 /* AfterTapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3156B9F028E18BD3006B8F57 /* AfterTapViewController.swift */; };
 		31AD7B3128DAE980007BD4F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AD7B3028DAE980007BD4F0 /* AppDelegate.swift */; };
 		31AD7B3328DAE980007BD4F0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AD7B3228DAE980007BD4F0 /* SceneDelegate.swift */; };
 		31AD7B3528DAE980007BD4F0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AD7B3428DAE980007BD4F0 /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3156B9F028E18BD3006B8F57 /* AfterTapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterTapViewController.swift; sourceTree = "<group>"; };
 		31AD7B2D28DAE980007BD4F0 /* SlideshowApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlideshowApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31AD7B3028DAE980007BD4F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		31AD7B3228DAE980007BD4F0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 				31AD7B3028DAE980007BD4F0 /* AppDelegate.swift */,
 				31AD7B3228DAE980007BD4F0 /* SceneDelegate.swift */,
 				31AD7B3428DAE980007BD4F0 /* ViewController.swift */,
+				3156B9F028E18BD3006B8F57 /* AfterTapViewController.swift */,
 				31AD7B3628DAE980007BD4F0 /* Main.storyboard */,
 				31AD7B3928DAE982007BD4F0 /* Assets.xcassets */,
 				31AD7B3B28DAE982007BD4F0 /* LaunchScreen.storyboard */,
@@ -151,6 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				31AD7B3528DAE980007BD4F0 /* ViewController.swift in Sources */,
+				3156B9F128E18BD3006B8F57 /* AfterTapViewController.swift in Sources */,
 				31AD7B3128DAE980007BD4F0 /* AppDelegate.swift in Sources */,
 				31AD7B3328DAE980007BD4F0 /* SceneDelegate.swift in Sources */,
 			);

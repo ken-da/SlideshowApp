@@ -4,8 +4,9 @@
 //
 //  Created by KTC次世代 on 2022/09/21.
 //
-// 参考元URL:https://seeku.hateblo.jp/entry/2016/07/02/204854   ボタンによる画像変更(進む/戻る)について
-//          https://teratail.com/questions/166259              画像の自動再生/停止について
+// 参考元URL:https://seeku.hateblo.jp/entry/2016/07/02/204854       ボタンによる画像変更(進む/戻る)について
+//          https://teratail.com/questions/166259                  画像の自動再生/停止について
+//          https://qiita.com/kamimi01/items/1162a6884e6060ed6b17  ボタン無効化/有効化　切替について
 
 import UIKit
 
@@ -58,12 +59,14 @@ class ViewController: UIViewController {
         
         
     @IBAction func nextImage(_ sender: Any) {
-        //表示している画像番号を１つ増やす
         
         //画像番号が最後(3)の場合、最初の画像(1)を表示する
+        //error故意発生のため、2→3へ変更
         if dispImageNo == 2 {
             dispImageNo = 0
         } else {
+            
+            //表示している画像番号を１つ増やす
             dispImageNo += 1
         }
         
@@ -132,8 +135,21 @@ class ViewController: UIViewController {
         //画像を表示
         displayImage()
     }
-
     
+    //画像タップ時に画面遷移を実施
+    @IBAction func imageTapped(_ sender: UITapGestureRecognizer) {
+  
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let AfterTapViewController:AfterTapViewController = segue.destination as! AfterTapViewController
+        AfterTapViewController.expImage = imageView.image
+    }
+    
+    //画面遷移先から戻ってくる
+    @IBAction func unwind(_ segue: UIStoryboardSegue) {
+        
+    }
 
 }
 
