@@ -138,12 +138,34 @@ class ViewController: UIViewController {
     
     //画像タップ時に画面遷移を実施
     @IBAction func imageTapped(_ sender: UITapGestureRecognizer) {
-  
+        
     }
 
+    //画面遷移
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //画面遷移先を指定
         let AfterTapViewController:AfterTapViewController = segue.destination as! AfterTapViewController
+        //画像を遷移先のプロパティへ渡す
         AfterTapViewController.expImage = imageView.image
+        
+        if autoFlag == true {
+            
+            //ボタン表記、再生へ変更
+            autoButton.setTitle("再生", for: .normal)
+        
+            //進むボタン、戻るボタン 有効化
+            nextButton.isEnabled = true
+            prevButton.isEnabled = true
+        
+            //自動再生を停止,自動再生再開時のためnilを代入
+            if self.timer != nil {
+                self.timer.invalidate()
+                self.timer = nil
+            }
+        
+            autoFlag = false
+  
+        }
     }
     
     //画面遷移先から戻ってくる
